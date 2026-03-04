@@ -30,11 +30,8 @@ plt.scatter(x_test, y_test)
 plt.scatter(x_test, test_model, color='g')
 plt.show()
 
-n1 = y_train.size
-n2 = y_test.size
-
-train_error = np.sqrt(np.linalg.norm(y_train - train_model) / n1)
-test_error = np.sqrt(np.linalg.norm(y_test - test_model) / n2)
+train_error = np.sqrt(np.mean((y_train - train_model)**2))
+test_error = np.sqrt(np.mean((y_test - test_model)**2))
 
 print(train_error, '\n', test_error)
 
